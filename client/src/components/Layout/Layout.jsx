@@ -14,7 +14,7 @@ const Layout = () => {
   useFavourites()
   useBookings()
 
-  const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0();
+  const { isAuthenticated, user, getAccessTokenSilently } = useAuth0();
   const { setUserDetails } = useContext(UserDetailContext);
 
   const { mutate } = useMutation({
@@ -25,7 +25,7 @@ const Layout = () => {
   useEffect(() => {
     const getTokenAndRegsiter = async () => {
       console.log("hello")
-      const res = await getAccessTokenWithPopup({
+      const res = await getAccessTokenSilently({
         authorizationParams: {
           audience: "https://homyz-five.vercel.app",
           scope: "openid profile email",
