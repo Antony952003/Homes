@@ -27,7 +27,7 @@ const Layout = () => {
       console.log("hello")
       const res = await getAccessTokenWithPopup({
         authorizationParams: {
-          audience: "http://localhost:8000/",
+          audience: "https://homyz-five.vercel.app",
           scope: "openid profile email",
         },
       });
